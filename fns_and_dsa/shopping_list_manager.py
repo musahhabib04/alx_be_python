@@ -1,5 +1,9 @@
 def display_menu():
+<<<<<<< HEAD
     print("\nShopping List Manager")
+=======
+    print("Shopping List Manager")
+>>>>>>> 562f7f6 (Create shopping_list_manager.py with required functionality)
     print("1. Add Item")
     print("2. Remove Item")
     print("3. View List")
@@ -30,7 +34,11 @@ def main():
         
         elif choice == '3':
             if shopping_list:
+<<<<<<< HEAD
                 print("\nShopping List:")
+=======
+                print("Shopping List:")
+>>>>>>> 562f7f6 (Create shopping_list_manager.py with required functionality)
                 for index, item in enumerate(shopping_list, start=1):
                     print(f"{index}. {item}")
             else:
@@ -45,4 +53,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+<<<<<<< HEAD
 
+=======
+>>>>>>> 562f7f6 (Create shopping_list_manager.py with required functionality)
