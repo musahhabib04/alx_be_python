@@ -10,7 +10,7 @@ class BankAccount:
         if amount > self.balance:
             return "Insufficient funds"
         self.balance -= amount
-        return self.balance
+        print(f"Withdrew: ${amount}")
 
     def get_balance(self):
         return self.balance
