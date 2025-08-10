@@ -19,12 +19,12 @@ class EBook(Book):
 
 
 class PrintBook(Book):
-    def __init__(self, title, author, year, pages):
+    def __init__(self, title, author, year, pages_count):
         super().__init__(title, author, year)
-        self.pages = pages
+        self.pages = pages_count
 
     def __str__(self):
-        return f"Print Book: '{self.title}' by {self.author} ({self.year}), {self.pages} pages"
+        return f"Print Book: '{self.title}' by {self.author} ({self.year}), {self.page_count} pages"
 
 
 class Library:
