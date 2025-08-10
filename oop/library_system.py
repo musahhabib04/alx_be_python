@@ -1,51 +1,39 @@
-# oop/library_system.py
-
 class Book:
-    """Base class for all books."""
-    def __init__(self, title: str, author: str):
+    def __init__(self, title, author, year):
         self.title = title
         self.author = author
+        self.year = year
 
-    def info(self) -> str:
-        """Return a simple string describing the book."""
-        return f"Book: {self.title} by {self.author}"
+    def __str__(self):
+        return f"'{self.title}' by {self.author} ({self.year})"
 
 
 class EBook(Book):
-    """Digital book with file size in KB."""
-    def __init__(self, title: str, author: str, file_size: int):
-        super().__init__(title, author)
-        self.file_size = file_size
+    def __init__(self, title, author, year, filesize):
+        super().__init__(title, author, year)
+        self.filesize = filesize
 
-    def info(self) -> str:
-        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
+    def __str__(self):
+        return f"E-Book: '{self.title}' by {self.author} ({self.year}), {self.filesize}MB"
 
 
 class PrintBook(Book):
-    """Printed book with page count."""
-    def __init__(self, title: str, author: str, page_count: int):
-        super().__init__(title, author)
-        self.page_count = page_count
+    def __init__(self, title, author, year, pages):
+        super().__init__(title, author, year)
+        self.pages = pages
 
-    def info(self) -> str:
-        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+    def __str__(self):
+        return f"Print Book: '{self.title}' by {self.author} ({self.year}), {self.pages} pages"
 
 
 class Library:
-    """A simple library that holds a collection of Book instances."""
     def __init__(self):
         self.books = []
 
-    def add_book(self, book: Book):
-        """Add a Book (or subclass) instance to the library."""
-        if not isinstance(book, Book):
-            raise TypeError("Only Book instances (or subclasses) can be added.")
+    def add_book(self, book):
         self.books.append(book)
 
-    def list_books(self):
-        """Print details of every book in the library."""
+    def __str__(self):
         if not self.books:
-            print("No books in the library.")
-            return
-        for book in self.books:
-            print(book.info())
+            return "The library is empty."
+        return "\n".join(str(book) for book in self.books)
