@@ -14,7 +14,7 @@ class EBook(Book):
         self.filesize = filesize
 
     def __str__(self):
-        return f"E-Book: '{self.title}' by {self.author} ({self.year}), {self.filesize}MB"
+        return f"{super().__str__()} [File size: {self.file_size}MB]"
 
 
 class PrintBook(Book):
