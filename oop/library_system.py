@@ -34,7 +34,9 @@ class Library:
     def add_book(self, book):
         self.books.append(book)
 
-    def __str__(self):
+    def list_books(self):
         if not self.books:
-            return "The library is empty."
-        return "\n".join(str(book) for book in self.books)
+            print("No books in the library.")
+        else:
+            for book in self.books:
+                print(book)  # Uses each book’s __str__ method
