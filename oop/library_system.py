@@ -1,11 +1,12 @@
 class Book:
-    def __init__(self, title, author, year):
+    def __init__(self, title, author, year, page_count):
         self.title = title
         self.author = author
         self.year = year
+        self.page_count = page_count
 
     def __str__(self):
-        return f"'{self.title}' by {self.author} ({self.year})"
+        return f"{self.title} by {self.author} ({self.year}) - {self.page_count} pages"
 
 
 class EBook(Book):
