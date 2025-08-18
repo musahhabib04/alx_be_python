@@ -4,11 +4,11 @@ from mysql.connector import Error
 def create_database():
     connection = None
     try:
-        # Connect to MySQL server
+        # connect to MySQL server
         connection = mysql.connector.connect(
             host="localhost",
-            user="root",             # Change if your MySQL user is different
-            password="@Habib0208039344" # Put your real password here
+            user="root",       # replace with your username
+            password="@Habib0208039344"  # replace with your password
         )
 
         if connection.is_connected():
@@ -23,6 +23,7 @@ def create_database():
         if connection and connection.is_connected():
             cursor.close()
             connection.close()
+            print("MySQL connection is closed")
 
 if __name__ == "__main__":
     create_database()
